@@ -3,6 +3,14 @@ import bcrypt from "bcrypt";
 import { findUserByEmail, getUsers, signupService } from "../service/userService";
 import { generateToken } from "../middleware/jwtToken";
 
+interface usersData {
+  _id: string;
+  email: string;
+  name: string;
+  password: string;
+  role: string;
+}
+
 export const signup: RequestHandler = async (req, res) => {
   try {
     const userInfo = req.body;
@@ -75,6 +83,12 @@ export const login: RequestHandler = async (req, res) => {
 export const getAllUser: RequestHandler = async (req, res) => {
   try {
     const users = await getUsers();
+    if(users.length == 0) {
+      return res.status(404).json({
+        status: "fail 👀",
+        error: "No user found",
+      });
+    }
     res.status(200).json({
       status: "success 🎉",
       data: users,
