@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 app.all("*", (req, res) => {
   res.send(
-    "<h1 style='text-align: center; padding: 20px; color:red; margin-top: 4rem'>📚 Requested Route Not Found 🤫</h1>"
+    "<h1 style='text-align: center; padding: 20px; color:red; margin-top: 4rem'>🕳️ Requested Route Not Found 💥</h1>"
   );
 });
 

@@ -9,9 +9,9 @@ mongoose.set("strictQuery", true);
 const Connection = async () => {
   try {
     await mongoose.connect(url);
-    console.log("Developer Bank Ltd DB is Running");
+    console.log("🗂️ DBL DB is Running");
   } catch (error) {
-    console.log("Error while connecting with DB");
+    console.log("💥 Error while connecting with DB");
     console.log(error);
   }
 };
