@@ -17,6 +17,14 @@ export const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide your NID Number"],
     },
+    cell: {
+      type: String,
+      required: [true, "Please provide your Cell Number"],
+    },
+    DOB: {
+      type: String,
+      required: [true, "Please provide your Date of Birth"],
+    },
     imgUrl: {
       type: String,
       validator: (value: string) => validator.isURL(value)

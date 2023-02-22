@@ -3,6 +3,8 @@ import Users from "../model/userModel";
 interface SignupData {
   email: string;
   name: string;
+  cell: string;
+  DOB: string;
   password: string;
   role: string;
 }
