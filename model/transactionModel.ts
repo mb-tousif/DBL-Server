@@ -1,7 +1,15 @@
 import mongoose from "mongoose";
+import { ObjectId } from 'mongodb';
 
 export const transactionSchema = new mongoose.Schema({
     id: String,
+    userRef: {
+        email: String,
+        id: {
+            type: ObjectId,
+            ref: "user",
+        }
+    },
     type: {
         type: String,
         enum: ["Deposit", "Withdraw", "Balance Transfer", "Tax", "Interest", "Dividend", "Fee", "Service Charge","Other"],
