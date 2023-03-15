@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES6",                                 
+    /* Modules */
+    "module": "commonjs",  
+    "rootDir": "./",                                
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,                                  
+    /* Completeness */
+    "skipLibCheck": true       
+  },
+  "include": ["**/*.ts"]
+}
