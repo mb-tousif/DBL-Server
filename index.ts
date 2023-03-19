@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import Connection from "./utilities/server";
+import router from "./routes/Routes";
 dotenv.config();
 
 const port = process.env.PORT || 4000;
@@ -16,6 +17,8 @@ app.get("/", (req, res) => {
     "<h1 style='text-align: center; padding: 20px; color:#753a88'><span style='color: green'>🛢 </span>𝕯𝖊𝖛𝖊𝖑𝖔𝖕𝖊𝖗 𝕭𝖆𝖓𝖐 𝕷𝖙𝖉 Server is successfully running 🚀</h1>"
   );
 });
+
+app.use("/api/v1", router);
 
 app.all("*", (req, res) => {
   res.send(
