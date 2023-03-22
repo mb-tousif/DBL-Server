@@ -11,8 +11,8 @@ const Connection = async () => {
     await mongoose.connect(url);
     console.log("🗂️ DBL DB is Running");
   } catch (error) {
-    console.log("💥 Error while connecting with DB");
-    console.log(error);
+    console.log("💥 Error while connecting with DB 🚦");
+    // console.log(error);
   }
 };
 
