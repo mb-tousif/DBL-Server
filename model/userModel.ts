@@ -60,10 +60,14 @@ export const userSchema = new mongoose.Schema(
       },
       required: [true, "Role is required"],
     },
+    OTP: {
+      type: String,
+      required: [true, "OTP is required"],
+    },
     status: {
       type: String,
-      enum: ["Active A/C", "Inactive A/C"],
-      default: "Active A/C",
+      enum: ["Active A/C", "Inactive A/C", "Guest"],
+      default: "Guest",
     },
   },
   {
