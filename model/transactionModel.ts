@@ -26,6 +26,9 @@ export const transactionSchema = new mongoose.Schema({
         default: "Income",
         required: [true, "Please provide transaction Description"],
     }
+},
+{
+  timestamps: true,
 });
 
 const Transactions = mongoose.model("transaction", transactionSchema);
