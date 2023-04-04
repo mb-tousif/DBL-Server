@@ -13,6 +13,14 @@ interface SignupData {
   OTP: string;
 }
 
+export const generateOTP= ()=> {
+  let OTP = '';
+  for (let i = 0; i < 5; i++) {
+      OTP += Math.floor(Math.random() * 10);
+  }
+  return OTP;
+}
+
 export const signupService = async (userInfo:SignupData) => {
   const result = await Users.create(userInfo);
   return result;

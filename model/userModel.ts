@@ -30,9 +30,9 @@ export const userSchema = new mongoose.Schema(
     },
     role: {
       type: String,
-      default: "A/C Holder",
+      default: "Guest",
       enum: {
-        values: ["Cashier", "Manager", "A/C Holder", "Admin"],
+        values: ["Cashier", "Manager", "A/C Holder", "Admin", "Guest"],
         message: "{VALUE} is not a correct Role for user!",
       },
       required: [true, "Role is required"],
@@ -70,8 +70,8 @@ export const userSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["Active A/C", "Inactive A/C", "Guest"],
-      default: "Guest",
+      enum: ["Active A/C", "Inactive A/C" ],
+      default: "Inactive A/C",
     },
   },
   {

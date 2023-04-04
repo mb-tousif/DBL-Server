@@ -1,11 +1,14 @@
 import { RequestHandler } from "express";
 import bcrypt from "bcrypt";
-import { findUserByEmail, getUsers, signupService } from "../service/userService";
+import { findUserByEmail, generateOTP, getUsers, signupService } from "../service/userService";
 import { generateToken } from "../middleware/jwtToken";
 
 export const signup: RequestHandler = async (req, res) => {
   try {
+    const OTP = generateOTP();
     const userInfo = req.body;
+    userInfo.OTP = OTP;
+    console.log(userInfo);
     const result = await signupService(userInfo);
     await result.save();
     res.status(200).json({
