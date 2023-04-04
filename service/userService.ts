@@ -1,12 +1,16 @@
 import Users from "../model/userModel";
 
 interface SignupData {
+  fullName: string;
+  NID: string;
   email: string;
-  name: string;
-  cell: string;
   DOB: string;
-  password: string;
   role: string;
+  password: string;
+  cell: string;
+  imgUrl: string;
+  address: string;
+  OTP: string;
 }
 
 export const signupService = async (userInfo:SignupData) => {

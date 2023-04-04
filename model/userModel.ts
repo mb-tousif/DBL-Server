@@ -17,18 +17,6 @@ export const userSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please provide your NID Number"],
     },
-    cell: {
-      type: String,
-      required: [true, "Please provide your Cell Number"],
-    },
-    DOB: {
-      type: String,
-      required: [true, "Please provide your Date of Birth"],
-    },
-    imgUrl: {
-      type: String,
-      validator: (value: string) => validator.isURL(value)
-    },
     email: {
       type: String,
       validate: [validator.isEmail, "Provide a valid Email"],
@@ -36,20 +24,9 @@ export const userSchema = new mongoose.Schema(
       unique: true,
       required: [true, "Email address is required"],
     },
-    password: {
+    DOB: {
       type: String,
-      required: [true, "Password is required"],
-      validate: {
-        validator: (value: string) =>
-          validator.isStrongPassword(value, {
-            minLength: 6,
-            minLowercase: 3,
-            minNumbers: 1,
-            minUppercase: 1,
-            minSymbols: 1,
-          }),
-        message: "Password {VALUE} is not strong enough.",
-      },
+      required: [true, "Please provide your Date of Birth"],
     },
     role: {
       type: String,
@@ -59,6 +36,33 @@ export const userSchema = new mongoose.Schema(
         message: "{VALUE} is not a correct Role for user!",
       },
       required: [true, "Role is required"],
+    },
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+      validate: {
+        validator: (value: string) =>
+        validator.isStrongPassword(value, {
+          minLength: 6,
+          minLowercase: 3,
+          minNumbers: 1,
+          minUppercase: 1,
+          minSymbols: 1,
+        }),
+        message: "Password {VALUE} is not strong enough.",
+      },
+    },
+    cell: {
+      type: String,
+      required: [true, "Please provide your Cell Number"],
+    },
+    imgUrl: {
+      type: String,
+      validator: (value: string) => validator.isURL(value)
+    },
+    address: {
+      type: String,
+      required: [true, "Please provide your Address"],
     },
     OTP: {
       type: String,
