@@ -1,14 +1,10 @@
 import mongoose from "mongoose";
-import { ObjectId } from 'mongodb';
 
 export const transactionSchema = new mongoose.Schema({
     id: String,
-    userRef: {
-        email: String,
-        id: {
-            type: ObjectId,
-            ref: "user",
-        }
+    user: {
+        type: mongoose.Types.ObjectId,
+        ref: "user",
     },
     type: {
         type: String,

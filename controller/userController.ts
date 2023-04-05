@@ -8,7 +8,7 @@ export const signup: RequestHandler = async (req, res) => {
     const OTP = generateOTP();
     const userInfo = req.body;
     userInfo.OTP = OTP;
-    console.log(userInfo);
+    // console.log(userInfo);
     const result = await signupService(userInfo);
     await result.save();
     res.status(200).json({
