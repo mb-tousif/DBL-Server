@@ -1,8 +1,8 @@
-import Transactions from "../model/transactionModel";
+import Transactions, { transactionSchema } from "../model/transactionModel";
 
 interface TransactionData {
   type: string;
-  balance: number;
+  amount: number;
   name: string;
 }
 
@@ -12,7 +12,9 @@ export const transaction = async (info: TransactionData) => {
 };
 
 export const getTransactions = async () => {
-  const result = await Transactions.find({});
+  const result =
+  await Transactions.find({})
+  .populate("user", "fullName email NID");
   return result;
 };
 

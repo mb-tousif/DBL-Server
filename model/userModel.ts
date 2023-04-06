@@ -73,6 +73,12 @@ export const userSchema = new mongoose.Schema(
       enum: ["Active A/C", "Inactive A/C" ],
       default: "Inactive A/C",
     },
+    transaction: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "transaction",
+      }
+    ]
   },
   {
     timestamps: true,

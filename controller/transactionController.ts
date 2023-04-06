@@ -1,5 +1,6 @@
 import { RequestHandler } from "express";
 import { delTransaction, getTransactions, transaction, updateBalance } from "../service/transactionService";
+import Users from "../model/userModel";
 
 // Get all Transactions
 export const getAllTransaction: RequestHandler = async (req, res) => {
@@ -29,6 +30,10 @@ export const postTransaction: RequestHandler = async (req, res) => {
     const info = req.body;
     const result = await transaction(info);
     await result.save();
+    await Users.updateOne( 
+      { _id: result.user },
+      { $push: { transaction: result._id } }
+    );
     res.status(200).json({
       status: "success 🎉",
       message: "Transaction saved in DB successfully📣.",

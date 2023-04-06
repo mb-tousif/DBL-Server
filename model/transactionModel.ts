@@ -12,7 +12,7 @@ export const transactionSchema = new mongoose.Schema({
         default: "Deposit",
         required: [true, "Please provide transaction Name"],
     },
-    balance: {
+    amount: {
         type: Number,
         required: [true, "Please deposit A/C opening Balance"],
     },
@@ -21,7 +21,7 @@ export const transactionSchema = new mongoose.Schema({
         enum: ["Income", "Expense", "Business Fund Transfer", "Personal Fund Transfer", "Loan", "Investment", "Insurance", "Tax", "Other"],
         default: "Income",
         required: [true, "Please provide transaction Description"],
-    }
+    },
 },
 {
   timestamps: true,
