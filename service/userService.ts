@@ -28,11 +28,11 @@ export const signupService = async (userInfo:SignupData) => {
 
 export const findUserByEmail = async (email:string) => {
   return await Users.findOne({ email })
-  .populate("transactions", "type balance name");
+  .populate("transaction", "type balance name");
 };
 
 export const getUsers = async () => {
   const result = await Users.find({})
-  .populate("transaction", "type amount")
+  .populate("transaction", "type amount -_id")
   return result;
 };

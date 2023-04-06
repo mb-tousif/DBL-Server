@@ -70,7 +70,7 @@ export const login: RequestHandler = async (req, res) => {
   } catch (error) {
     res.status(500).json({
       status: "fail 👀",
-      message: "Logged in Failed!",
+      message: error,
     });
   }
 };

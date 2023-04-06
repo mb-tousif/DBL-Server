@@ -1,6 +1,7 @@
 import express from "express";
 import { getAllUser, login, signup } from "../controller/userController";
 import { deleteTransaction, getAllTransaction, postTransaction, updateTransaction } from "../controller/transactionController";
+import { verifyToken } from "../middleware/verifyToken";
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.post("/login", login);
 
 // Transaction Routes
 router.get("/allTransactions", getAllTransaction);
-router.post("/transaction", postTransaction);
+router.post("/transaction", verifyToken, postTransaction);
 router.put("/transaction/:id", updateTransaction);
 router.delete("/transaction/:id", deleteTransaction);
 

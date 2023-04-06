@@ -18,7 +18,8 @@ export const transactionSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-        enum: ["Income", "Expense", "Business Fund Transfer", "Personal Fund Transfer", "Loan", "Investment", "Insurance", "Tax", "Other"],
+        enum: ["Income", "Expense", "BFT", "PFT", "Loan", "Investment", "Insurance", "Tax", "Other"],
+        // "Business Fund Transfer" = BFT, "Personal Fund Transfer" = PFT
         default: "Income",
         required: [true, "Please provide transaction Description"],
     },
