@@ -13,6 +13,14 @@ export const userSchema = new mongoose.Schema(
       minLength: [3, "Name must be at least 3 characters."],
       maxLength: [100, "Name is too large"],
     },
+    gender: {
+      type: String,
+      enum: {
+        values: ["Male", "Female", "Others"],
+        message: "{VALUE} is not a correct type of Gender for user!",
+      },
+      required: [true, "Gender is required"],
+    },
     NID: {
       type: String,
       required: [true, "Please provide your NID Number"],
