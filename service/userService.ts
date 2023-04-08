@@ -2,6 +2,7 @@ import Users from "../model/userModel";
 
 interface SignupData {
   fullName: string;
+  gender: string;
   NID: string;
   email: string;
   DOB: string;
