@@ -13,5 +13,5 @@
     /* Completeness */
     "skipLibCheck": true       
   },
-  "include": ["**./App*.ts"]
+  "include": ["**./App/*.ts"]
 }
