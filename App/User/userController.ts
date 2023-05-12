@@ -1,7 +1,7 @@
 import { RequestHandler } from "express";
 import bcrypt from "bcrypt";
 import { findUserByEmail, generateOTP, getUsers, signupService } from "./userService";
-import { generateToken } from "../Middleware/jwtToken";
+import { generateToken } from "../middleware/jwtToken";
 
 export const signup: RequestHandler = async (req, res) => {
   try {
