@@ -2,9 +2,9 @@
    "version": 2,
    "name": "bank-server",
    "builds": [
-      { "src": "./index.ts", "use": "@vercel/node" }
+      { "src": "./App/index.ts", "use": "@vercel/node" }
    ],
    "routes": [
-      { "src": "/(.*)", "dest": "/index.ts" }
+      { "src": "/App(.*)", "dest": "./App/index.ts" }
    ]
 }

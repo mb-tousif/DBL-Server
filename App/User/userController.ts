@@ -1,7 +1,7 @@
 import { RequestHandler } from "express";
 import bcrypt from "bcrypt";
 import { findUserByEmail, generateOTP, getUsers, signupService } from "./userService";
-import { generateToken } from "../middleware/jwtToken";
+import { generateToken } from "../Middleware/jwtToken";
 
 export const signup: RequestHandler = async (req, res) => {
   try {
@@ -43,7 +43,7 @@ export const login: RequestHandler = async (req, res) => {
       });
     }
 
-    const isPasswordValid = bcrypt.compareSync(password, user.password);
+    const isPasswordValid = bcrypt.compareSync(password, user.password as string);
 
     if (!isPasswordValid) {
       return res.status(403).json({
