@@ -4,8 +4,8 @@
     "target": "ES6",                                 
     /* Modules */
     "module": "commonjs",  
-    "rootDir": "./App",                                
-    "outDir": "./App/dist",
+    "rootDir": "./",                                
+    "outDir": "./dist",
     "esModuleInterop": true,
     "sourceMap": true,
     "forceConsistentCasingInFileNames": true,
@@ -13,5 +13,5 @@
     /* Completeness */
     "skipLibCheck": true       
   },
-  "include": ["**./App/*.ts"]
+  "include": ["**./*.ts"]
 }
