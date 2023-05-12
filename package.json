@@ -2,10 +2,10 @@
   "name": "bank-server",
   "version": "1.0.0",
   "description": "",
-  "main": "./App/index.ts",
+  "main": "./index.ts",
   "scripts": {
-    "start": "node ./App/index.ts",
-    "start-dev": "nodemon ./App/index.ts"
+    "start": "node index.ts",
+    "start-dev": "nodemon index.ts"
   },
   "keywords": [],
   "author": "",
