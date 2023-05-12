@@ -1,4 +1,4 @@
-import Transactions from "../model/transactionModel";
+import Transactions from "./transactionModel";
 
 interface TransactionData {
   type: string;

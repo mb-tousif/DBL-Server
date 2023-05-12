@@ -1,6 +1,6 @@
 import { RequestHandler } from "express";
-import { delTransaction, getTransactions, transaction, updateBalance } from "../service/transactionService";
-import Users from "../model/userModel";
+import { delTransaction, getTransactions, transaction, updateBalance } from "./transactionService";
+import Users from "../User/userModel";
 
 // Get all Transactions
 export const getAllTransaction: RequestHandler = async (req, res) => {

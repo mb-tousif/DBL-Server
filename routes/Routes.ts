@@ -1,7 +1,7 @@
 import express from "express";
-import { getAllUser, login, signup } from "../controller/userController";
-import { deleteTransaction, getAllTransaction, postTransaction, updateTransaction } from "../controller/transactionController";
-import { verifyToken } from "../middleware/verifyToken";
+import { getAllUser, login, signup } from "../App/User/userController";
+import { deleteTransaction, getAllTransaction, postTransaction, updateTransaction } from "../App/Transaction/transactionController";
+import { verifyToken } from "../App/middleware/verifyToken";
 
 const router = express.Router();
 

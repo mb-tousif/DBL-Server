@@ -3,6 +3,8 @@ import validator from "validator";
 import bcrypt from "bcrypt";
 const saltRounds = 10;
 
+type Password = string | Buffer | undefined | null;
+
 export const userSchema = new mongoose.Schema(
   {
     id: String,
@@ -98,7 +100,7 @@ userSchema.pre("save", function (next) {
     return next();
   }
 
-  const password = this.password;
+  const password:any = this.password;
   const hashedPassword = bcrypt.hashSync(password, saltRounds);
   this.password = hashedPassword;
   next();

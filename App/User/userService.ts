@@ -1,4 +1,4 @@
-import Users from "../model/userModel";
+import Users from "./userModel";
 
 interface SignupData {
   fullName: string;
