@@ -13,5 +13,4 @@
     /* Completeness */
     "skipLibCheck": true       
   },
-  "include": ["**./src*.ts"]
 }
