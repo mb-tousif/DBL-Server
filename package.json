@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "nodemon src/index.ts",
-    "build": "rimraf dist && tsc",
+    "build": "tsc",
     "start-dev": "nodemon src/index.ts"
   },
   "keywords": [],
