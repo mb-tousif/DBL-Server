@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "engines": {
-    "node": "=>16"
+    "node": ">=16.13.0"
   },
   "scripts": {
     "start": "node dist/index.js",
