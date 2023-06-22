@@ -6,8 +6,8 @@
     "node": ">=16.13.0"
   },
   "scripts": {
-    "start": "node dist/index.js",
-    "build": "tsc",
+    "start": "nodemon src/index.ts",
+    "build": "rimraf dist && tsc",
     "start-dev": "nodemon src/index.ts"
   },
   "keywords": [],
